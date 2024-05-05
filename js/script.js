@@ -4,17 +4,16 @@
 // Created on: Mar 2024
 // This file contains the JS functions for index.html
 
-const randomNumber = Math.floor(Math.random() * 6) + 1
-
 function myButtonClicked() {
   // input
-  const userNumber = parseInt(document.getElementById("user-number").value)
+  const negative = document.getElementById("negative").checked
+  let randomNumber = Math.floor(Math.random() * 6) + 1
 
   // process
-  if (userNumber == randomNumber) {
-    // output
-    document.getElementById("answer").innerHTML = "You have guessed the correct number!"
-  } else (userNumber != randomNumber) {
-    document.getElementById("answer").innerHTML = "You have not guessed the correst number!"
+  if (negative == true) {
+    randomNumber = randomNumber * (-1)
+    document.getElementById("answer").innerHTML = "The random number is: " + randomNumber
+  } else {
+    document.getElementById("answer").innerHTML = "The random number is: " + randomNumber
   }
 }
